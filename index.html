@@ -1,96 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Loya Wallet Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        .left-gradient {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        }
+
         .hover-scale {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .hover-scale:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
+
         .font-poppins {
             font-family: 'Poppins', sans-serif;
         }
-
-        @media (max-width: 640px) {
-            .text-3xl {
-                font-size: 1.75rem; 
-            }
-            .text-2xl {
-                font-size: 1.5rem;
-            }
-            .text-xl {
-                font-size: 1rem;
-            }
-            .text-sm {
-                font-size: 0.75rem;
-            }
-        }
     </style>
 </head>
+
 <body class="min-h-screen flex items-center justify-center bg-black">
-    <div class="flex flex-col lg:flex-row w-full max-w-5xl mx-2 sm:mx-4 my-6 sm:my-8 rounded-lg overflow-hidden shadow-2xl">
-        
-        <div class="w-full lg:w-1/2 bg-stone-950 p-4 sm:p-6 lg:p-8 text-white flex flex-col justify-center">
-            <div class="flex flex-col items-center mb-4 sm:mb-6">
-                <img src="img.png" alt="Loya Wallet Logo" class="w-16 h-16 sm:w-20 sm:h-20 lg:w-22 lg:h-22 rounded-full mb-3">
-                <h1 class="text-2xl sm:text-3xl font-bold font-poppins">Loya Wallet</h1>
-            </div>
-            <h2 class="text-base sm:text-lg lg:text-xl font-bold mb-4 text-center">Trust begins here. Log in to access your Loya Wallet securely and easily.</h2>
+    <div class="flex flex-col lg:flex-row w-full max-w-4xl mx-4 my-8 rounded-2xl overflow-hidden shadow-2xl">
+        <div
+            class="w-full lg:w-1/2 bg-gradient-to-br from-stone-950 via-stone-900 to-yellow-200 to-yellow-800 p-8 text-white flex flex-col justify-center items-center">
+            <img src="img.png" alt="Loya Wallet Illustration" class="w-3/4 max-w-xs mb-6">
+            <p class="text-lg font-poppins font-medium text-center">Trust begins here.Log in to access your Loya Wallet
+                securely and easily.</p>
         </div>
-        
-        <div class="w-full lg:w-1/2 bg-stone-900 p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
-            <h2 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Welcome back</h2>
-            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-6">
-                <button class="flex items-center justify-center bg-stone-700 text-white py-2 sm:p-3 rounded-lg hover:bg-gray-600 hover-scale text-sm sm:text-base">
-                    <i class="fab fa-google text-red-500 mr-2"></i> Sign in with Google
-                </button>
-                <button class="flex items-center justify-center bg-stone-700 text-white py-2 sm:p-3 rounded-lg hover:bg-gray-600 hover-scale text-sm sm:text-base">
-                    <i class="fab fa-facebook text-blue-500 mr-2"></i> Sign in with Facebook
-                </button>
-            </div>
-            <div class="flex items-center mb-4 sm:mb-6">
-                <div class="flex-1 h-px bg-gray-600"></div>
-                <span class="mx-2 sm:mx-4 text-gray-400 text-sm sm:text-base">or</span>
-                <div class="flex-1 h-px bg-gray-600"></div>
-            </div>
+        <div class="w-full lg:w-1/2 bg-white p-8 flex flex-col justify-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 font-poppins">Login</h2>
             <form>
-                <div class="mb-4 sm:mb-5">
-                    <label for="email" class="block text-xs sm:text-sm font-medium text-gray-300 mb-1 sm:mb-2">Email</label>
-                    <input type="email" id="email" name="email" required
-                           class="w-full p-2 sm:p-3 bg-stone-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
-                           placeholder="Enter your email">
+                <div class="mb-5">
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2 font-poppins">Email
+                        address</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <i class="fas fa-user text-gray-400"></i>
+                        </span>
+                        <input type="email" id="email" name="email" required
+                            class="w-full pl-10 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-poppins"
+                            placeholder="Enter your email">
+                    </div>
                 </div>
-                <div class="mb-4 sm:mb-5">
-                    <label for="password" class="block text-xs sm:text-sm font-medium text-gray-300 mb-1 sm:mb-2">Password</label>
-                    <input type="password" id="password" name="password" required
-                           class="w-full p-2 sm:p-3 bg-stone-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
-                           placeholder="••••••••">
+                <div class="mb-5">
+                    <label for="password"
+                        class="block text-sm font-medium text-gray-700 mb-2 font-poppins">Password</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <i class="fas fa-lock text-gray-400"></i>
+                        </span>
+                        <input type="password" id="password" name="password" required
+                            class="w-full pl-10 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-poppins"
+                            placeholder="Enter your password">
+                    </div>
                 </div>
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-5 space-y-2 sm:space-y-0">
+                <div class="flex items-center justify-between mb-5">
                     <div class="flex items-center">
                         <input type="checkbox" id="remember" name="remember"
-                               class="h-3 w-3 sm:h-4 sm:w-4 text-blue-600 focus:ring-blue-500 border-gray-600 rounded bg-gray-700">
-                        <label for="remember" class="ml-1 sm:ml-2 text-xs sm:text-sm text-gray-300">Remember me</label>
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="remember" class="ml-2 text-sm text-gray-600 font-poppins">Remember me</label>
                     </div>
-                    <a href="#" class="text-xs sm:text-sm text-blue-400 hover:underline">Forgot password?</a>
+                    <a href="#" class="text-sm text-blue-600 hover:underline font-poppins">Forgot password?</a>
                 </div>
                 <button type="submit"
-                        class="w-full bg-blue-600 text-white py-2 sm:p-3 rounded-lg font-semibold hover:bg-blue-700 hover-scale transition-colors text-sm sm:text-base">
-                    Sign in to your account
+                    class="w-full bg-gray-900 text-white p-3 rounded-lg font-semibold hover:bg-gray-800 hover-scale transition-colors font-poppins">
+                    SIGN IN
                 </button>
             </form>
-            <p class="text-center text-xs sm:text-sm text-gray-400 mt-4 sm:mt-6">
-                Don’t have an account? <a href="#" class="text-blue-400 hover:underline">Sign up</a>
-            </p>
+            <div class="mt-6">
+                <div class="flex items-center mb-4">
+                    <div class="flex-1 h-px bg-gray-300"></div>
+                    <span class="mx-4 text-sm text-gray-600 font-poppins">OR CONTINUE WITH</span>
+                    <div class="flex-1 h-px bg-gray-300"></div>
+                </div>
+                <div class="flex justify-center space-x-4">
+                    <button class="p-3 rounded-full bg-gray-100 hover:bg-gray-200 hover-scale">
+
+
+                        <i class="fab fa-google text-red-500 text-lg"></i>
+                    </button>
+                    <button class="p-3 rounded-full bg-gray-100 hover:bg-gray-200 hover-scale">
+                        <i class="fab fa-facebook text-blue-600 text-lg"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
